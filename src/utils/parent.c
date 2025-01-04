@@ -1,44 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parent.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 21:59:49 by ryusukeyash       #+#    #+#             */
-/*   Updated: 2024/12/31 18:56:51 by ryyashir         ###   ########.fr       */
+/*   Created: 2024/12/31 16:12:37 by ryyashir          #+#    #+#             */
+/*   Updated: 2024/12/31 20:42:45 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//  < file1 cmd1 | cmd2 > file2
 
 // ./pipex infile "ls -l" "wc -l" outfile = < infile ls -l | wc -l > outfile
 //  ./pipex infile "grep a1" "wc -w" outfile = < infile grep a1 | wc -w > outfile
 
-#include "../include/libft.h"
-#include "../include/pipex.h"
 
-int main(int ac , char *av[]  , char **env)
+#include "../../include/libft.h"
+#include "../../include/pipex.h"
+
+void    ft_parent(int **av , int **p_fd, char **env)
 {
-    int     pipefd[2];
-    pid_t   pid;
+    int     fd;
 
-    ft_ac_check(ac);
-    if(pipe(pipefd) < 0)
-    {
-        perror("pipe");
-        return (1);
-    }
-    pid = fork();
-    if(pid < 0)
-    {
-        perror("fork");
-        return (1);
-    }
-    if(pid == 0)
-    {
-        ft_child(av , pipefd , env);
-    } else {
-        ft_parent(av , pipefd , env);
-    }
+    fd = ft_open(av);
+    dup2(fd , 1);
+    close(fd);
+    ft_exec()
+
 }
