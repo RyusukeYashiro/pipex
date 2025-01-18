@@ -6,7 +6,6 @@
 #include <sys/wait.h>
 #include <stdio.h>
 
-
 typedef struct s_pipex
 {
     int     pipefd[2];
@@ -14,8 +13,11 @@ typedef struct s_pipex
     pid_t   pid2;
     int     infile;
     int     outfile;
-    const   **cmd_av;
+    char   **cmd_split_in;
+    char   **cmd_fullpath;
+    char    **env_split;
 } t_pipex;
 
 
 #endif
+ 

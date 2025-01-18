@@ -1,18 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   errordeal.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 20:58:23 by ryyashir          #+#    #+#             */
-/*   Updated: 2024/04/28 20:59:53 by ryyashir         ###   ########.fr       */
+/*   Created: 2025/01/18 17:21:47 by ryyashir          #+#    #+#             */
+/*   Updated: 2025/01/18 17:22:41 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../include/libft.h"
+#include "../../include/pipex.h"
 
-void	ft_bzero(void *s, size_t n)
-{
-	ft_memset(s, 0, n);
-}
