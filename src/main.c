@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 21:59:49 by ryusukeyash       #+#    #+#             */
-/*   Updated: 2025/01/17 19:38:27 by ryyashir         ###   ########.fr       */
+/*   Updated: 2025/01/21 18:35:50 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int ac , char *av[]  , char **env)
         return(perror("pipe") , 1);
     if(pipex.pid1 == 0)
     {
-        ft_child1(av , pipex.pipefd , env);
+        ft_child1(av , pipex , env);
         exit(0);
     }
     pipex.pid2 = fork();
@@ -47,7 +47,7 @@ int main(int ac , char *av[]  , char **env)
         return(perror("pipe") , 1);
     if(pipex.pid2 == 0)
     {
-        ft_child2(av , pipex.pipefd , env);
+        ft_child2(av , pipex , env);
         exit(0);
     }
     ft_close_pipeend(pipex.pipefd);
