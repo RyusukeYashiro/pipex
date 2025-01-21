@@ -1,15 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_str.c                                      :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/18 17:22:16 by ryyashir          #+#    #+#             */
-/*   Updated: 2025/01/18 17:22:35 by ryyashir         ###   ########.fr       */
+/*   Created: 2025/01/21 18:49:58 by ryusukeyash       #+#    #+#             */
+/*   Updated: 2025/01/21 18:50:59 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-#include "../../include/pipex.h"
+void	ft_free_split(char **split)
+{
+	int 	i;
 
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);	
+}
