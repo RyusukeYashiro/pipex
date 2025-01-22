@@ -6,7 +6,7 @@
 /*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:55:08 by ryusukeyash       #+#    #+#             */
-/*   Updated: 2024/12/12 10:36:36 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2025/01/21 22:46:53 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <limits.h>
+# include <stdarg.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -33,7 +34,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-long				ft_atoi(const char *str);
+int					ft_atoi(const char *str);
 
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
@@ -73,5 +74,18 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 int					ft_lstsize(t_list *lst);
+int					ft_printf(const char *format, ...);
+int					ft_convert_format(va_list *args, const char format);
+int					ft_print_char(char c);
+int					ft_print_str(char *s);
+int					ft_print_int(int c);
+int					ft_print_unit(unsigned int c);
+char				*ft_uitoa(unsigned int c);
+int					ft_uni_num_len(unsigned int c);
+int					ft_print_hex(unsigned int c, const char format);
+int					ft_put_hex(unsigned int num, const char format);
+int					ft_print_point(unsigned long long c);
+int					ft_point_hex(unsigned long long num);
+int					ft_print_percent(void);
 
 #endif
