@@ -6,7 +6,7 @@
 /*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 21:59:49 by ryusukeyash       #+#    #+#             */
-/*   Updated: 2025/01/21 18:35:50 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2025/01/22 21:54:31 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,20 @@ void ft_close_pipeend(int pipefd[2])
     close(pipefd[1]);
 }
 
-int main(int ac , char *av[]  , char **env)
+void 	ft_init_struct(t_pipex *pipex)
+{
+	pipex->file_name = NULL;
+    pipex->cmd_fullpath = NULL;
+    pipex->env_split = NULL;
+    pipex->cmd_split_in = NULL;
+}
+
+int main(int ac , char *av[]  , char *env[])
 {
     t_pipex pipex;
     //引数をチェックする関数
     ft_ac_check(ac);
+	ft_init_struct(&pipex);
     // パイプの作成
     if(pipe(pipex.pipefd) < 0)
         return(perror("pipe") , 1);
@@ -39,7 +48,7 @@ int main(int ac , char *av[]  , char **env)
         return(perror("pipe") , 1);
     if(pipex.pid1 == 0)
     {
-        ft_child1(av , pipex , env);
+        ft_child1(av , &pipex , env);
         exit(0);
     }
     pipex.pid2 = fork();
@@ -47,7 +56,7 @@ int main(int ac , char *av[]  , char **env)
         return(perror("pipe") , 1);
     if(pipex.pid2 == 0)
     {
-        ft_child2(av , pipex , env);
+        ft_child2(av , &pipex , env);
         exit(0);
     }
     ft_close_pipeend(pipex.pipefd);
