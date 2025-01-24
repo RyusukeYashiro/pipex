@@ -6,7 +6,7 @@
 /*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 19:38:19 by ryyashir          #+#    #+#             */
-/*   Updated: 2025/01/22 22:02:54 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2025/01/23 02:34:53 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void   ft_execv(char **cmd , char *env[] , t_pipex *pipex)
     // 2 : もしあるなら、そのコマンドのフルパスを取得してくる
     // 3 : あとはexecvにexecv("path" , "pipex.cmd_split_in" , NULL)を実行する
     char    *path_env;
-
+	
 	pipex->cmd_split_in = cmd;
     path_env = get_env_value("PATH" , env);
 	if(path_env == NULL)

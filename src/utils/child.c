@@ -6,7 +6,7 @@
 /*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 16:12:05 by ryyashir          #+#    #+#             */
-/*   Updated: 2025/01/22 22:02:09 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2025/01/23 04:09:03 by ryusukeyash      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void    ft_child1(char *av[] , t_pipex *pipex, char *env[])
     fd = ft_open(pipex->file_name , file_type);
 	if(fd == -1 && file_type == 0)
 	{
-		ft_free_split(cmd1);
+		ft_free_split(cmd1);	
 		ft_errorDeal(pipex , FILE_ERR_N);
 	}
     //標準入力をファイルのファイルディスクリプタリダイレクト
@@ -42,7 +42,7 @@ void    ft_child1(char *av[] , t_pipex *pipex, char *env[])
 		ft_dup2_error(cmd1 , fd);
     //不要な読み込みエンドは閉じる
     close(pipex->pipefd[0]);
-    //実際にコマンド実行するための関数
+    //実際にコマンド実行するための関数	
     ft_execv(cmd1, env , pipex);
 	ft_free_split(cmd1);
 }
