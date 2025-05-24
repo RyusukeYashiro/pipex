@@ -20,8 +20,8 @@ int     ft_open(char *file , int  file_type)
 
 	fd = 0;
     if (file_type == 0)
-        fd = open(file , O_RDONLY);
+        fd = open(file, O_RDONLY);
     else if(file_type == 1)
-        fd = open(file , (O_WRONLY | O_CREAT | O_TRUNC));
+        fd = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0644);
     return (fd);
 }

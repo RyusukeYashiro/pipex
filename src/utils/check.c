@@ -16,9 +16,9 @@
 
 void   ft_ac_check(int ac)
 {
-    if(ac < 5)
+    if (ac != 5)
     {
-        ft_putstr_fd("this is ac error" , 2); 
-        exit(0);
+        ft_putstr_fd("Usage: ./pipex file1 \"cmd1\" \"cmd2\" file2\n", 2);
+        exit(1);
     }
 }
