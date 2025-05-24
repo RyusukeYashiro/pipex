@@ -50,4 +50,5 @@ int			ft_open(char *file, int file_type);
 void		ft_free_split(char **split);
 void		ft_dup2_error(char **cmd, int fd);
 void 	ft_init_struct(t_pipex *pipex);
+void 	ft_printf(const char *format, ...);
 #endif

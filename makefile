@@ -12,29 +12,35 @@ OBJ     = $(SRC:.c=.o)
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
-INCLUDES = -I./include -I./libft
+INCLUDES = -I./include -I./Libft -I./ft_printf/include
 RM      = rm -f
-LIBFT   = ./libft/libft.a
+LIBFT   = ./Libft/libft.a
+PRINTF  = ./ft_printf/libftprintf.a
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT)
+$(NAME): $(OBJ) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(PRINTF) $(LIBFT)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
-	$(MAKE) -C libft
+	$(MAKE) -C Libft
+
+$(PRINTF):
+	$(MAKE) -C ft_printf
 
 clean:
 	$(RM) $(OBJ)
-	$(MAKE) -C libft clean
+	$(MAKE) -C Libft clean
+	$(MAKE) -C ft_printf clean
 
 fclean: clean
 	$(RM) $(NAME)
-	$(MAKE) -C libft fclean
+	$(MAKE) -C Libft fclean
+	$(MAKE) -C ft_printf fclean
 
 re: fclean all
