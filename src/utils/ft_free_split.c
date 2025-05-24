@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
+#include "../../lib/libft/include/libft.h"
 #include "../../include/pipex.h"
 
 void	ft_free_split(char **split)

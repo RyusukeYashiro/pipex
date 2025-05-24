@@ -15,8 +15,8 @@
 // ./pipex infile "ls -l" "wc -l" outfile = < infile ls -l | wc -l > outfile
 //  ./pipex infile "grep a1" "wc -w" outfile = < infile grep a1 | wc -w > outfile
 
-#include "../include/libft.h"
-#include "../include/pipex.h"
+#include "libft.h"
+#include "pipex.h"
 
 
 void ft_close_pipeend(int pipefd[2])

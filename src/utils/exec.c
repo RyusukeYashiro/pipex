@@ -13,7 +13,7 @@
 // ./pipex infile "ls -l" "wc -l" outfile = < infile ls -l | wc -l > outfile
 //  ./pipex infile "grep a1" "wc -w" outfile = < infile grep a1 | wc -w > outfile
 
-#include "../../include/libft.h"
+#include "../../lib/libft/include/libft.h"
 #include "../../include/pipex.h"
 
 char	*get_env_value(const char *key , char *env[])

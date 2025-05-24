@@ -1,4 +1,26 @@
-test/
-infile
-outfile
+# Object files
+*.o
+
+# Libraries
+*.a
+
+# Executables
+pipex
+
+# Debug files
+*.dSYM/
+
+# IDE specific files
 .vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+/infile
+/outfile
+a.out

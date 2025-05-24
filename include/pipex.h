@@ -21,9 +21,9 @@
 # include <errno.h>
 
 # define CMD_ERR "command not found\n"
-# define DIR_ERR "No such file or directory\n"
+# define DIR_ERR "No such file or directory"
 # define FILE_ERR_P "Permission denied"
-# define FILE_ERR_N "No such file or directory\n"
+# define FILE_ERR_N "No such file or directory"
 
 typedef struct s_pipex
 {

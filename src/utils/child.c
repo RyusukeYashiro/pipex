@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/libft.h"
-#include "../../include/pipex.h"
+#include "../../lib/libft/include/libft.h"
+	#include "../../include/pipex.h"
 
 // ./pipex infile "ls -l" "wc -l" outfile = < infile ls -l | wc -l > outfile
 //  ./pipex infile "grep a1" "wc -w" outfile = < infile grep a1 | wc -w > outfile
