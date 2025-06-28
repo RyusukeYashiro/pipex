@@ -34,7 +34,7 @@ char	*ft_uitoa(unsigned int c)
 	int		len;
 
 	len = ft_uni_num_len(c);
-	 str = (char *)malloc(sizeof(char) * (len + 1));
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	str[len] = '\0';

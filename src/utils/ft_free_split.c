@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryusukeyashiro <ryusukeyashiro@student.    +#+  +:+       +#+        */
+/*   By: ryyashir <ryyashir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/21 18:49:58 by ryusukeyash       #+#    #+#             */
-/*   Updated: 2025/01/22 19:52:30 by ryusukeyash      ###   ########.fr       */
+/*   Updated: 2025/06/28 19:48:19 by ryyashir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../lib/libft/include/libft.h"
 #include "../../include/pipex.h"
+#include "../../lib/libft/include/libft.h"
 
 void	ft_free_split(char **split)
 {
-	int 	i;
+	int	i;
 
 	i = 0;
 	while (split[i])
@@ -23,5 +23,5 @@ void	ft_free_split(char **split)
 		free(split[i]);
 		i++;
 	}
-	free(split);	
+	free(split);
 }
